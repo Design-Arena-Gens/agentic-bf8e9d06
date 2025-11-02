@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RJ Copiers Video Creation Offer</title>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        min-height: 100vh;
+        background: radial-gradient(circle at 20% 20%, #ff8b5f, transparent 40%),
+          radial-gradient(circle at 80% 20%, #753cff, transparent 45%),
+          radial-gradient(circle at 50% 80%, #ff3cac, transparent 55%),
+          #0b0d2c;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+        color: #ffffff;
+        position: relative;
+        overflow: hidden;
+      }
+
+      body::before,
+      body::after {
+        content: "";
+        position: absolute;
+        width: 420px;
+        height: 420px;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0));
+        border-radius: 50%;
+        filter: blur(6px);
+        z-index: 0;
+      }
+
+      body::before {
+        top: -140px;
+        right: -120px;
+      }
+
+      body::after {
+        bottom: -160px;
+        left: -140px;
+      }
+
+      .poster {
+        width: min(960px, 100%);
+        padding: 60px 72px;
+        background: rgba(8, 10, 36, 0.78);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 20px 70px rgba(8, 10, 36, 0.7);
+        border-radius: 28px;
+        backdrop-filter: blur(18px);
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+      }
+
+      .poster::before {
+        content: "";
+        position: absolute;
+        width: 480px;
+        height: 480px;
+        top: -240px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0));
+        opacity: 0.8;
+        z-index: -1;
+      }
+
+      .poster::after {
+        content: "";
+        position: absolute;
+        width: 220px;
+        height: 220px;
+        bottom: -80px;
+        right: 120px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, rgba(117, 60, 255, 0.55), rgba(255, 59, 172, 0.4));
+        filter: blur(12px);
+        z-index: -1;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 20px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.14);
+        backdrop-filter: blur(8px);
+        color: rgba(255, 255, 255, 0.92);
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        font-size: 0.78rem;
+        margin-bottom: 36px;
+      }
+
+      .badge span {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #ffce00;
+      }
+
+      h1 {
+        font-size: clamp(2.5rem, 5vw, 3.6rem);
+        line-height: 1.08;
+        margin-bottom: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .highlight {
+        background: linear-gradient(120deg, #ffce00, #ff8b5f, #753cff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .subheading {
+        font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+        color: rgba(255, 255, 255, 0.82);
+        margin-bottom: 40px;
+        max-width: 640px;
+      }
+
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 24px;
+        margin-bottom: 52px;
+      }
+
+      .info-card {
+        padding: 24px 28px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .info-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), transparent 55%);
+        opacity: 0.8;
+      }
+
+      .info-card strong {
+        display: block;
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .info-card p {
+        font-size: 0.98rem;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.78);
+      }
+
+      .price-tag {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        margin-bottom: 32px;
+      }
+
+      .price-tag .amount {
+        font-size: clamp(2.2rem, 4vw, 3rem);
+        font-weight: 700;
+      }
+
+      .price-tag .duration {
+        font-size: 1.1rem;
+        color: rgba(255, 255, 255, 0.8);
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+      }
+
+      .cta {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+
+      .cta button {
+        padding: 18px 32px;
+        border-radius: 16px;
+        border: none;
+        background: linear-gradient(120deg, #ff8b5f, #ff3cac, #753cff);
+        color: #ffffff;
+        font-size: 1.05rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        box-shadow: 0 15px 35px rgba(117, 60, 255, 0.35);
+      }
+
+      .cta button:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 38px rgba(255, 59, 172, 0.38);
+      }
+
+      .cta span {
+        font-size: 0.95rem;
+        letter-spacing: 0.06em;
+        color: rgba(255, 255, 255, 0.85);
+        text-transform: uppercase;
+      }
+
+      .contact {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+      }
+
+      .contact .icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        background: rgba(255, 255, 255, 0.14);
+      }
+
+      .footer-tagline {
+        margin-top: 56px;
+        font-size: 0.92rem;
+        letter-spacing: 0.14em;
+        color: rgba(255, 255, 255, 0.6);
+        text-transform: uppercase;
+      }
+
+      @media (max-width: 640px) {
+        .poster {
+          padding: 44px 28px;
+        }
+
+        .subheading {
+          margin-bottom: 32px;
+        }
+
+        .info-card {
+          padding: 20px 22px;
+        }
+
+        .cta button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="poster">
+      <div class="badge">
+        <span></span>
+        Premium Video Storytelling
+      </div>
+      <h1>
+        Ignite Your Brand With
+        <span class="highlight">RJ Copiers</span>
+      </h1>
+      <p class="subheading">
+        Transform your business story into a cinematic 60-second showcase that hooks, informs,
+        and converts. Bold visuals, magnetic scripting, and pro editing done for you.
+      </p>
+
+      <div class="info-grid">
+        <article class="info-card">
+          <strong>Creative Concepting</strong>
+          <p>Storyboard, script, and dynamic motion graphics tailored to your brand voice.</p>
+        </article>
+        <article class="info-card">
+          <strong>Premium Production</strong>
+          <p>Full HD mastering, seamless transitions, royalty-free music, and sound design.</p>
+        </article>
+        <article class="info-card">
+          <strong>Launch Ready</strong>
+          <p>Delivered in vertical + widescreen formats optimized for social, web, and ads.</p>
+        </article>
+      </div>
+
+      <div class="price-tag">
+        <span class="amount">₹1,999</span>
+        <span class="duration">60 Second Spotlight Video</span>
+      </div>
+
+      <section class="cta">
+        <button type="button">Book Your Shoot</button>
+        <div class="contact">
+          <div class="icon">📞</div>
+          <div>RJ Copiers · 8248686180</div>
+        </div>
+      </section>
+
+      <div class="footer-tagline">Power Up Your Presence · Captivate Every Frame</div>
+    </main>
+  </body>
+</html>
